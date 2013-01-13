@@ -1,4 +1,4 @@
-;;; -*- Mode: LISP; Syntax: COMMON-LISP; Package: DOCUMENTATION-TEMPLATE; Base: 10 -*-
+;;; -*- Mode: LISP; Syntax: COMMON-LISP; Package: SCHULTE-DOCUMENTATION-TEMPLATE; Base: 10 -*-
 
 ;;; Copyright (c) 2006-2013, Dr. Edmund Weitz.  All rights reserved.
 
