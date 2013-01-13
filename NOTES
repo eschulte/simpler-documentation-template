@@ -1,6 +1,6 @@
 -*- org -*-
 
-* TODO link between function names in documentation strings
+* DONE link between function names in documentation strings
 Parse function documentation strings and replace `foo' instances with
 links to "foo".
 

@@ -31,6 +31,7 @@
 (defpackage :schulte-documentation-template
   (:use :cl
         :cl-who
+        :cl-ppcre
         #+:lispworks :clos
         #+:sbcl :sb-mop
         #+:allegro :mop)
