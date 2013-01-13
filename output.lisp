@@ -39,7 +39,7 @@ WRITE-NAME-P is true and NAME is not a SETF name."
   "Writes the footer for a documentation entry for the name NAME
 including the documentation string DOC-STRING."
   (format t "~%<blockquote><br>~%~%~@[~A~]~%~%</blockquote>~%~%<!-- End of entry for ~A -->~%"
-          (and doc-string (escape-string-iso-8859-1 doc-string)) name))
+          (and doc-string doc-string) name))
 
 (defun write-constant-entry (symbol doc-string)
   "Writes a full documentation entry for the constant SYMBOL."
