@@ -1,7 +1,7 @@
 ;;; -*- Mode: LISP; Syntax: COMMON-LISP; Package: CL-USER; Base: 10 -*-
-;;; $Header: /usr/local/cvsrep/documentation-template/documentation-template.asd,v 1.15 2014-11-23 12:12:59 edi Exp $
+;;; $Header: /usr/local/cvsrep/documentation-template/documentation-template.asd,v 1.14 2013-01-11 13:45:29 edi Exp $
 
-;;; Copyright (c) 2006-2014, Dr. Edmund Weitz.  All rights reserved.
+;;; Copyright (c) 2006-2013, Dr. Edmund Weitz.  All rights reserved.
 
 ;;; Redistribution and use in source and binary forms, with or without
 ;;; modification, are permitted provided that the following conditions
@@ -39,7 +39,7 @@
 
 (asdf:defsystem :documentation-template
   :serial t
-  :version "0.4.4"
+  :version "0.4.3"
   :components ((:file "packages")
                (:file "specials")
                (:file "util")

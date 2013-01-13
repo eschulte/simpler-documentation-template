@@ -1,7 +1,7 @@
 ;;; -*- Mode: LISP; Syntax: COMMON-LISP; Package: DOCUMENTATION-TEMPLATE; Base: 10 -*-
-;;; $Header: /usr/local/cvsrep/documentation-template/output.lisp,v 1.19 2014-11-23 12:12:59 edi Exp $
+;;; $Header: /usr/local/cvsrep/documentation-template/output.lisp,v 1.18 2013-01-11 13:45:29 edi Exp $
 
-;;; Copyright (c) 2006-2014, Dr. Edmund Weitz.  All rights reserved.
+;;; Copyright (c) 2006-2013, Dr. Edmund Weitz.  All rights reserved.
 
 ;;; Redistribution and use in source and binary forms, with or without
 ;;; modification, are permitted provided that the following conditions
@@ -285,7 +285,7 @@ current version is 0.1.0.
 This documentation was prepared with <a href=\"http://weitz.de/documentation-template/\">DOCUMENTATION-TEMPLATE</a>.
 </p>
 <p>
-$Header: /usr/local/cvsrep/documentation-template/output.lisp,v 1.19 2014-11-23 12:12:59 edi Exp $
+$Header: /usr/local/cvsrep/documentation-template/output.lisp,v 1.18 2013-01-11 13:45:29 edi Exp $
 <p><a href=\"http://weitz.de/index.html\">BACK TO MY HOMEPAGE</a>
 
 </body>

@@ -1,7 +1,7 @@
 ;;; -*- Mode: LISP; Syntax: COMMON-LISP; Package: DOCUMENTATION-TEMPLATE; Base: 10 -*-
-;;; $Header: /usr/local/cvsrep/documentation-template/util.lisp,v 1.16 2014-11-23 12:12:59 edi Exp $
+;;; $Header: /usr/local/cvsrep/documentation-template/util.lisp,v 1.15 2013-01-11 13:45:29 edi Exp $
 
-;;; Copyright (c) 2006-2014, Dr. Edmund Weitz.  All rights reserved.
+;;; Copyright (c) 2006-2013, Dr. Edmund Weitz.  All rights reserved.
 
 ;;; Redistribution and use in source and binary forms, with or without
 ;;; modification, are permitted provided that the following conditions
@@ -34,15 +34,13 @@
 ;;; list (for functions and macros), a documentation string, and
 ;;; optionally a list of specializers
 
-#+(or :sbcl :allegro :ccl)
+#+(or :sbcl :allegro)
 (defun function-lambda-list (function)
   "Returns the lambda list of the function designator FUNCTION."
   #+:sbcl
   (sb-introspect:function-lambda-list function)
   #+:allegro
-  (excl:arglist function)
-  #+ccl
-  (ccl:arglist function))
+  (excl:arglist function))
     
 (defun symbol-constant-p (symbol)
   "Returns true if SYMBOL is a constant."
@@ -53,8 +51,7 @@
   "Returns true if SYMBOL is declared special."
   #+:lispworks (sys:declared-special-p symbol)
   #+:sbcl (eql :special (sb-int:info :variable :kind symbol))
-  #+:allegro (eq (sys:variable-information symbol) :special)
-  #+:ccl (eq (ccl:variable-information symbol) :special))
+  #+:allegro (eq (sys:variable-information symbol) :special))
 
 (defun constant-doc-entry (symbol)
   "Returns a list with one entry for a constant if SYMBOL names a
