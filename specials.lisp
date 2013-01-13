@@ -38,6 +38,12 @@ set this value.")
 argument of CREATE-TEMPLATE and its initial value is NIL.  It is also
 used internally.")
 
+(defvar *abstract-html* nil
+  "Text of the abstract.")
+
+(defvar *subtitle-txt* nil
+  "Text of the subtitle.")
+
 (defvar *symbols* nil
   "The list of symbols for which we will create an index with links.")
 

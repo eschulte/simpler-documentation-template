@@ -207,7 +207,7 @@ written.  OTHER-ENTRIES, probably updated, will be returned."
                                            :qualifiers qualifiers)))))
   other-entries)
 
-(defun write-page-header (package-name subtitle symbols)
+(defun write-page-header (package-name abstract subtitle symbols)
   "Writes the header of the HTML page.  Assumes that the library
 has the same name as the package.  Adds a list of all exported
 symbols with links."
@@ -243,14 +243,16 @@ symbols with links."
 <blockquote>
 <br>&nbsp;<br><h3><a name=abstract class=none>Abstract</a></h3>
 
-The code comes with
-a <a
-href=\"http://www.opensource.org/licenses/bsd-license.php\">BSD-style
-license</a> so you can basically do with it whatever you want.
+~A
+
+The code is available under the <a
+href=\"http://www.gnu.org/licenses/gpl-3.0.html\">GNU General Public License</a>.
 
 <p>
-<font color=red>Source:</font> <a href=\"http://github.com/eschulte/~A\">http://github.com/eschulte/~A</a>.
+<font color=red>Source:</font>
+<a href=\"http://github.com/eschulte/~A\">http://github.com/eschulte/~A</a>.
 </blockquote>
+
 
 <br>&nbsp;<br><h3><a class=none name=\"contents\">Contents</a></h3>
 <ol>
@@ -264,14 +266,19 @@ license</a> so you can basically do with it whatever you want.
 
 <br>&nbsp;<br><h3><a class=none name=\"source\">Source</a></h3>
 
-~2:*~A together with this documentation can be found at <a
+~A together with this documentation can be found at <a
 href=\"http://github.com/eschulte/~A\">http://github.com/eschulte/~A</a>.
 
 <br>&nbsp;<br><h3><a class=none name=\"dictionary\">The ~A dictionary</a></h3>
-
 "
-          package-name subtitle (string-downcase package-name)
-          package-name symbols))
+          package-name subtitle
+          abstract
+          (string-downcase package-name) (string-downcase package-name)
+          package-name symbols
+          package-name
+          (string-downcase package-name) (string-downcase package-name)
+          package-name
+          ))
 
 (defun write-page-footer ()
   "Writes the footer of the HTML page."
@@ -294,7 +301,8 @@ This documentation was prepared with a hacked up version of <a href=\"http://wei
                                                                        :filters '("HTML Files" "*.HTML;*.HTM"
                                                                                   "All Files" "*.*")
                                                                        :filter "*.HTML;*.HTM")))
-                                     (subtitle "a cool library")
+                                     (subtitle *subtitle-txt*)
+                                     (abstract *abstract-html*)
                                      ((:maybe-skip-methods-p *maybe-skip-methods-p*)
                                       *maybe-skip-methods-p*)
                                      (if-exists :supersede)
@@ -317,7 +325,7 @@ has a documentation string."
                  (loop
                   (let ((entry (or (pop entries) (return))))
                     (setq entries (write-entry entry entries))))))))
-        (write-page-header (package-name package) subtitle
+        (write-page-header (package-name package) abstract subtitle
                            (mapcar #'string-downcase (reverse *symbols*)))
         (write-string body)
         (write-page-footer))))
