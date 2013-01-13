@@ -1,4 +1,4 @@
-;;; -*- Mode: LISP; Syntax: COMMON-LISP; Package: DOCUMENTATION-TEMPLATE; Base: 10 -*-
+;;; -*- Mode: LISP; Syntax: COMMON-LISP; Package: SCHULTE-DOCUMENTATION-TEMPLATE; Base: 10 -*-
 ;;; $Header: /usr/local/cvsrep/documentation-template/output.lisp,v 1.18 2013-01-11 13:45:29 edi Exp $
 
 ;;; Copyright (c) 2006-2013, Dr. Edmund Weitz.  All rights reserved.
@@ -27,7 +27,7 @@
 ;;; NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 ;;; SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-(in-package :documentation-template)
+(in-package :schulte-documentation-template)
 
 (defun write-entry-header (name type &key (write-name-p t))
   "Writes the header for a documentation entry of name NAME and
@@ -282,11 +282,8 @@ current version is 0.1.0.
 <br>&nbsp;<br><h3><a class=none name=\"ack\">Acknowledgements</a></h3>
 
 <p>
-This documentation was prepared with <a href=\"http://weitz.de/documentation-template/\">DOCUMENTATION-TEMPLATE</a>.
+This documentation was prepared with a hacked up version of <a href=\"http://weitz.de/documentation-template/\">DOCUMENTATION-TEMPLATE</a>.
 </p>
-<p>
-$Header: /usr/local/cvsrep/documentation-template/output.lisp,v 1.18 2013-01-11 13:45:29 edi Exp $
-<p><a href=\"http://weitz.de/index.html\">BACK TO MY HOMEPAGE</a>
 
 </body>
 </html>"))

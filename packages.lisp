@@ -29,7 +29,7 @@
 
 (in-package :cl-user)
 
-(defpackage :documentation-template
+(defpackage :schulte-documentation-template
   (:use :cl
         :cl-who
         #+:lispworks :clos

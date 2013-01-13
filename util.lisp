@@ -1,4 +1,4 @@
-;;; -*- Mode: LISP; Syntax: COMMON-LISP; Package: DOCUMENTATION-TEMPLATE; Base: 10 -*-
+;;; -*- Mode: LISP; Syntax: COMMON-LISP; Package: SCHULTE-DOCUMENTATION-TEMPLATE; Base: 10 -*-
 ;;; $Header: /usr/local/cvsrep/documentation-template/util.lisp,v 1.15 2013-01-11 13:45:29 edi Exp $
 
 ;;; Copyright (c) 2006-2013, Dr. Edmund Weitz.  All rights reserved.
@@ -27,7 +27,7 @@
 ;;; NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 ;;; SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-(in-package :documentation-template)
+(in-package :schulte-documentation-template)
 
 ;;; For the purpose of this file, an "entry" is a list of four or five
 ;;; symbols - a name, a keyword for the kind of the entry, a lambda
