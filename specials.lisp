@@ -46,7 +46,7 @@ used internally.")
 ;; and <http://www.cliki.net/hyperdoc>
 ;; also used by LW-ADD-ONS
 
-(defvar *hyperdoc-base-uri* "http://weitz.de/documentation-template/")
+(defvar *hyperdoc-base-uri* "http://github.com/eschulte")
 
 (let ((exported-symbols-alist
        (loop for symbol being the external-symbols of :documentation-template

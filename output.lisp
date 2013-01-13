@@ -249,12 +249,12 @@ href=\"http://www.opensource.org/licenses/bsd-license.php\">BSD-style
 license</a> so you can basically do with it whatever you want.
 
 <p>
-<font color=red>Download shortcut:</font> <a href=\"http://weitz.de/files/~A.tar.gz\">http://weitz.de/files/~:*~A.tar.gz</a>.
+<font color=red>Source:</font> <a href=\"http://github.com/eschulte/~A\">http://github.com/eschulte/~A</a>.
 </blockquote>
 
 <br>&nbsp;<br><h3><a class=none name=\"contents\">Contents</a></h3>
 <ol>
-  <li><a href=\"#download\">Download</a>
+  <li><a href=\"#source\">Source</a>
   <li><a href=\"#dictionary\">The ~A dictionary</a>
     <ol>
 ~{      <li><a href=\"#~A\"><code>~:*~A</code></a>
@@ -262,11 +262,10 @@ license</a> so you can basically do with it whatever you want.
   <li><a href=\"#ack\">Acknowledgements</a>
 </ol>
 
-<br>&nbsp;<br><h3><a class=none name=\"download\">Download</a></h3>
+<br>&nbsp;<br><h3><a class=none name=\"source\">Source</a></h3>
 
-~2:*~A together with this documentation can be downloaded from <a
-href=\"http://weitz.de/files/~2:*~A.tar.gz\">http://weitz.de/files/~:*~A.tar.gz</a>. The
-current version is 0.1.0.
+~2:*~A together with this documentation can be found at <a
+href=\"http://github.com/eschulte/~A\">http://github.com/eschulte/~A</a>.
 
 <br>&nbsp;<br><h3><a class=none name=\"dictionary\">The ~A dictionary</a></h3>
 
