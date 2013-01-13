@@ -35,6 +35,7 @@
         #+:sbcl :sb-mop
         #+:allegro :mop)
   #+:lispworks (:add-use-defaults t)
-  (:export :*maybe-skip-methods-p*
+  (:export :*hyperdoc-base-uri*
+           :*maybe-skip-methods-p*
            :*target*
            :create-template))
