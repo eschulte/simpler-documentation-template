@@ -55,7 +55,7 @@ used internally.")
 (defvar *hyperdoc-base-uri* "http://github.com/eschulte")
 
 (let ((exported-symbols-alist
-       (loop for symbol being the external-symbols of :documentation-template
+       (loop for symbol being the external-symbols of :schulte-documentation-template
              collect (cons symbol
                            (concatenate 'string
                                         "#"
