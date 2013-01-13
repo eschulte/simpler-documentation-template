@@ -245,7 +245,6 @@ symbols with links."
 
 <h2> ~2:*~A - ~A</h2>
 
-<blockquote>
 <br>&nbsp;<br><h3><a name=abstract class=none>Abstract</a></h3>
 
 ~A
@@ -256,17 +255,15 @@ href=\"http://www.gnu.org/licenses/gpl-3.0.html\">GNU General Public License</a>
 <p>
 <font color=red>Source:</font>
 <a href=\"http://github.com/eschulte/~A\">http://github.com/eschulte/~A</a>.
-</blockquote>
-
 
 <br>&nbsp;<br><h3><a class=none name=\"contents\">Contents</a></h3>
 <ol>
-  <li><a href=\"#source\">Source</a>
-  <li><a href=\"#dictionary\">The ~A dictionary</a>
+  <li><a href=\"#source\">Source</a></li>
+  <li><a href=\"#dictionary\">The ~A dictionary</a></li>
     <ol>
-~{      <li><a href=\"#~A\"><code>~:*~A</code></a>
+~{      <li><a href=\"#~A\"><code>~:*~A</code></a></li>
 ~}    </ol>
-  <li><a href=\"#ack\">Acknowledgements</a>
+  <li><a href=\"#ack\">Acknowledgements</a></li>
 </ol>
 
 <br>&nbsp;<br><h3><a class=none name=\"source\">Source</a></h3>
