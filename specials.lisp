@@ -1,5 +1,4 @@
 ;;; -*- Mode: LISP; Syntax: COMMON-LISP; Package: DOCUMENTATION-TEMPLATE; Base: 10 -*-
-;;; $Header: /usr/local/cvsrep/documentation-template/specials.lisp,v 1.11 2013-01-11 13:45:29 edi Exp $
 
 ;;; Copyright (c) 2006-2013, Dr. Edmund Weitz.  All rights reserved.
 
