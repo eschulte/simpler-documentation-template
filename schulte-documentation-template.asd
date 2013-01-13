@@ -1,5 +1,4 @@
 ;;; -*- Mode: LISP; Syntax: COMMON-LISP; Package: CL-USER; Base: 10 -*-
-;;; $Header: /usr/local/cvsrep/documentation-template/documentation-template.asd,v 1.14 2013-01-11 13:45:29 edi Exp $
 
 ;;; Copyright (c) 2006-2013, Dr. Edmund Weitz.  All rights reserved.
 
@@ -29,17 +28,17 @@
 
 (in-package :cl-user)
 
-(defpackage :documentation-template-asd
+(defpackage :schulte-documentation-template-asd
   (:use :cl :asdf))
 
-(in-package :documentation-template-asd)
+(in-package :schulte-documentation-template-asd)
 
 #+:sbcl
 (require :sb-introspect)
 
-(asdf:defsystem :documentation-template
+(asdf:defsystem :schulte-documentation-template
   :serial t
-  :version "0.4.3"
+  :version "0.4.4"
   :components ((:file "packages")
                (:file "specials")
                (:file "util")
