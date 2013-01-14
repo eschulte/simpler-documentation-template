@@ -247,7 +247,7 @@ symbols with links."
 
 <br>&nbsp;<br><h3><a name=abstract class=none>Abstract</a></h3>
 
-~A
+<p>~A</p>
 
 The code is available under the <a
 href=\"http://www.gnu.org/licenses/gpl-3.0.html\">GNU General Public License</a>.
@@ -259,6 +259,7 @@ href=\"http://www.gnu.org/licenses/gpl-3.0.html\">GNU General Public License</a>
 <br>&nbsp;<br><h3><a class=none name=\"contents\">Contents</a></h3>
 <ol>
   <li><a href=\"#source\">Source</a></li>
+  <li><a href=\"#introduction\">Introduction</a></li>
   <li><a href=\"#dictionary\">The ~A dictionary</a></li>
     <ol>
 ~{      <li><a href=\"#~A\"><code>~:*~A</code></a></li>
@@ -270,6 +271,10 @@ href=\"http://www.gnu.org/licenses/gpl-3.0.html\">GNU General Public License</a>
 
 ~A together with this documentation can be found at <a
 href=\"http://github.com/eschulte/~A\">http://github.com/eschulte/~A</a>.
+
+<br>&nbsp;<br><h3><a class=none name=\"introduction\">Introduction</a></h3>
+
+INTRODUCTION_PASTE
 
 <br>&nbsp;<br><h3><a class=none name=\"dictionary\">The ~A dictionary</a></h3>
 "
