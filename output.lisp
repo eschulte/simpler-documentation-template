@@ -33,6 +33,22 @@
   (regex-replace-all
    "`([^']+)'" doc-string "<a href=\"#\\1\"><code>\\1</code></a>"))
 
+(defun expand-code-section-string (doc-string &aux in-code)
+  "Wrap sections text continuously indented by 4 spaces or more as code."
+  (let ((newline (format nil "~%")))
+    (apply 'concatenate 'string
+           (mapcan (lambda (line)
+                     (if (scan "^    " line)
+                         (if in-code
+                             (list line newline)
+                             (prog1 (list "<pre>" newline line newline)
+                               (setf in-code t)))
+                         (if in-code
+                             (prog1 (list "</pre>" newline)
+                               (setf in-code nil))
+                             (list line newline))))
+                   (append (split newline doc-string) (list newline))))))
+
 (defun write-entry-header (name type &key (write-name-p t))
   "Writes the header for a documentation entry of name NAME and
 type TYPE.  The HTML anchor will only get a 'name' attribute if
@@ -44,7 +60,8 @@ WRITE-NAME-P is true and NAME is not a SETF name."
   "Writes the footer for a documentation entry for the name NAME
 including the documentation string DOC-STRING."
   (format t "~%<blockquote><br>~%~%~@[~A~]~%~%</blockquote>~%~%<!-- End of entry for ~A -->~%"
-          (when doc-string (expand-doc-string doc-string)) name))
+          (when doc-string
+            (expand-code-section-string (expand-doc-string doc-string))) name))
 
 (defun write-constant-entry (symbol doc-string)
   "Writes a full documentation entry for the constant SYMBOL."
