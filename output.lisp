@@ -30,8 +30,8 @@
 
 (defun expand-doc-string (doc-string)
   "Expand `foo' forms in the doc string to links."
-  (regex-replace-all
-   "`([^']+)'" doc-string "<a href=\"#\\1\"><code>\\1</code></a>"))
+  (regex-replace-all ;; "<a href=\"#\\1\"><code>\\1</code></a>" <- if in package
+   "`([^']+)'" doc-string "<code>\\1</code>"))
 
 (defun expand-code-section-string (doc-string &aux in-code)
   "Wrap sections text continuously indented by 4 spaces or more as code."
