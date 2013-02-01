@@ -41,4 +41,5 @@
            :*target*
            :*subtitle-txt*
            :*abstract-html*
+           :*source*
            :create-template))

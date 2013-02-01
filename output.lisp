@@ -229,7 +229,7 @@ written.  OTHER-ENTRIES, probably updated, will be returned."
                                            :qualifiers qualifiers)))))
   other-entries)
 
-(defun write-page-header (package-name abstract subtitle symbols)
+(defun write-page-header (package-name abstract subtitle source symbols)
   "Writes the header of the HTML page.  Assumes that the library
 has the same name as the package.  Adds a list of all exported
 symbols with links."
@@ -271,7 +271,7 @@ href=\"http://www.gnu.org/licenses/gpl-3.0.html\">GNU General Public License</a>
 
 <p>
 <font color=red>Source:</font>
-<a href=\"http://github.com/eschulte/~A\">http://github.com/eschulte/~A</a>.
+<a href=\"~A\">~A</a>.
 
 <br>&nbsp;<br><h3><a class=none name=\"contents\">Contents</a></h3>
 <ol>
@@ -287,7 +287,7 @@ href=\"http://www.gnu.org/licenses/gpl-3.0.html\">GNU General Public License</a>
 <br>&nbsp;<br><h3><a class=none name=\"source\">Source</a></h3>
 
 ~A together with this documentation can be found at <a
-href=\"http://github.com/eschulte/~A\">http://github.com/eschulte/~A</a>.
+href=\"~A\">~A</a>.
 
 <br>&nbsp;<br><h3><a class=none name=\"introduction\">Introduction</a></h3>
 
@@ -297,10 +297,10 @@ INTRODUCTION_PASTE
 "
           package-name subtitle
           abstract
-          (string-downcase package-name) (string-downcase package-name)
+          source source
           package-name symbols
           package-name
-          (string-downcase package-name) (string-downcase package-name)
+          source source
           package-name
           ))
 
@@ -327,6 +327,7 @@ This documentation was prepared with a hacked up version of <a href=\"http://wei
                                                                        :filter "*.HTML;*.HTM")))
                                      (subtitle *subtitle-txt*)
                                      (abstract *abstract-html*)
+                                     (source *source*)
                                      ((:maybe-skip-methods-p *maybe-skip-methods-p*)
                                       *maybe-skip-methods-p*)
                                      (if-exists :supersede)
@@ -349,7 +350,7 @@ has a documentation string."
                  (loop
                   (let ((entry (or (pop entries) (return))))
                     (setq entries (write-entry entry entries))))))))
-        (write-page-header (package-name package) abstract subtitle
+        (write-page-header (package-name package) abstract subtitle source
                            (mapcar #'string-downcase (reverse *symbols*)))
         (write-string body)
         (write-page-footer))))
