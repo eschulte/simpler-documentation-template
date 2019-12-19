@@ -39,7 +39,5 @@
   (:export :*hyperdoc-base-uri*
            :*maybe-skip-methods-p*
            :*target*
-           :*subtitle-txt*
            :*abstract-html*
-           :*source*
            :create-template))
