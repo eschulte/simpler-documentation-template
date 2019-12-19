@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html> 
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <title>SIMPLER-DOCUMENTATION-TEMPLATE</title>
+  <style type="text/css">
+  pre { padding:5px; background-color:#e0e0e0 }
+  h3, h4 { text-decoration: underline; }
+  a { text-decoration: none; padding: 1px 2px 1px 2px; }
+  a:visited { text-decoration: none; padding: 1px 2px 1px 2px; }
+  a:hover { text-decoration: none; padding: 1px 1px 1px 1px; border: 1px solid #000000; } 
+  a:focus { text-decoration: none; padding: 1px 2px 1px 2px; border: none; }
+  a.none { text-decoration: none; padding: 0; }
+  a.none:visited { text-decoration: none; padding: 0; } 
+  a.none:hover { text-decoration: none; border: none; padding: 0; } 
+  a.none:focus { text-decoration: none; border: none; padding: 0; } 
+  a.noborder { text-decoration: none; padding: 0; } 
+  a.noborder:visited { text-decoration: none; padding: 0; } 
+  a.noborder:hover { text-decoration: none; border: none; padding: 0; } 
+  a.noborder:focus { text-decoration: none; border: none; padding: 0; }  
+  pre.none { padding:5px; background-color:#ffffff }
+  </style>
+</head>
+
+
+<h1>Simpler-documentation-template</h1>
+
+<p>
+Adopted from Edmund Weitz's
+<a href="https://github.com/edicl/documentation-template">documentation-template</a>
+package.  This version removes a bunch of hard-coded Weitz-specific
+stuff, and that's about it.
+</p>
+
+<pre><code>CL-USER&gt; (ql:quickload :alexandria)
+To load "alexandria":
+  Load 1 ASDF system:
+    alexandria
+; Loading "alexandria"
+
+(:ALEXANDRIA)
+CL-USER&gt; (ql:quickload :markdown.cl)
+To load "markdown.cl":
+  Load 1 ASDF system:
+    markdown.cl
+; Loading "markdown.cl"
+
+(:MARKDOWN.CL)
+CL-USER&gt; (ql:quickload :simpler-documentation-template)
+To load "simpler-documentation-template":
+  Load 1 ASDF system:
+    simpler-documentation-template
+; Loading "simpler-documentation-template"
+
+(:SIMPLER-DOCUMENTATION-TEMPLATE)
+CL-USER&gt; (simpler-documentation-template:create-template
+          :alexandria
+          :target "/tmp/alexandria.html"
+          :abstract-html (markdown.cl:parse
+                          "
+# The Alexandria Package
+
+An example demonstrating how to export documentation for a package
+using the `ALEXANDRIA` package."))
+; No value
+CL-USER&gt; ;; Point your browser at /tmp/alexandria.html to see the results.</code></pre>
+
+
+<h2><a class=none name="dictionary">The SIMPLER-DOCUMENTATION-TEMPLATE dictionary</a></h2>
+<ol>
+      <li><a href="#*abstract-html*"><code>*abstract-html*</code></a></li>
+      <li><a href="#*hyperdoc-base-uri*"><code>*hyperdoc-base-uri*</code></a></li>
+      <li><a href="#*maybe-skip-methods-p*"><code>*maybe-skip-methods-p*</code></a></li>
+      <li><a href="#*target*"><code>*target*</code></a></li>
+      <li><a href="#create-template"><code>create-template</code></a></li>
+
+</ol>
+
+<!-- Entry for *ABSTRACT-HTML* -->
+
+<p><br>[Special variable]<br><a class=none name='*abstract-html*'><b>*abstract-html*</b></a>
+<blockquote><br>
+
+Text of the abstract.
+
+
+
+
+</blockquote>
+
+<!-- End of entry for *ABSTRACT-HTML* -->
+
+
+<!-- Entry for *HYPERDOC-BASE-URI* -->
+
+<p><br>[Special variable]<br><a class=none name='*hyperdoc-base-uri*'><b>*hyperdoc-base-uri*</b></a>
+<blockquote><br>
+
+
+
+</blockquote>
+
+<!-- End of entry for *HYPERDOC-BASE-URI* -->
+
+
+<!-- Entry for *MAYBE-SKIP-METHODS-P* -->
+
+<p><br>[Special variable]<br><a class=none name='*maybe-skip-methods-p*'><b>*maybe-skip-methods-p*</b></a>
+<blockquote><br>
+
+This is the default value for the :MAYBE-SKIP-METHODS-P keyword
+argument of CREATE-TEMPLATE and its initial value is NIL.  It is also
+used internally.
+
+
+
+
+</blockquote>
+
+<!-- End of entry for *MAYBE-SKIP-METHODS-P* -->
+
+
+<!-- Entry for *TARGET* -->
+
+<p><br>[Special variable]<br><a class=none name='*target*'><b>*target*</b></a>
+<blockquote><br>
+
+Where to output the HTML page.  If this value is not NIL, it will
+be the default target for CREATE-TEMPLATE.  CREATE-TEMPLATE will also
+set this value.
+
+
+
+
+</blockquote>
+
+<!-- End of entry for *TARGET* -->
+
+
+<!-- Entry for CREATE-TEMPLATE -->
+
+<p><br>[Function]<br><a class=none name='create-template'><b>create-template</b> <i>package <tt>&amp;key</tt> target (abstract-html *abstract-html*) (maybe-skip-methods-p *maybe-skip-methods-p*) (page-footer *page-footer*) if-exists if-does-not-exist</i> =&gt; <i>result</i></a>
+<blockquote><br>
+
+Writes an HTML page with preliminary documentation entries and an
+index for all exported symbols of the package PACKAGE to the file
+TARGET.  If MAYBE-SKIP-METHODS-P is true, documentation entries for
+inidividual methods are skipped if the corresponding generic function
+has a documentation string.
+
+
+
+
+</blockquote>
+
+<!-- End of entry for CREATE-TEMPLATE -->
+</body></html>
