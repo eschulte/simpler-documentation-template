@@ -26,7 +26,7 @@
 ;;; NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 ;;; SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-(in-package :schulte-documentation-template)
+(in-package :simpler-documentation-template)
 
 (defvar *target* nil
   "Where to output the HTML page.  If this value is not NIL, it will
@@ -49,10 +49,10 @@ used internally.")
 ;; and <http://www.cliki.net/hyperdoc>
 ;; also used by LW-ADD-ONS
 
-(defvar *hyperdoc-base-uri* "http://github.com/eschulte")
+(defvar *hyperdoc-base-uri* "https://www.cliki.net/site/HyperSpec/")
 
 (let ((exported-symbols-alist
-       (loop for symbol being the external-symbols of :schulte-documentation-template
+       (loop for symbol being the external-symbols of :simpler-documentation-template
              collect (cons symbol
                            (concatenate 'string
                                         "#"
