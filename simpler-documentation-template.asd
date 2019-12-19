@@ -28,15 +28,15 @@
 
 (in-package :cl-user)
 
-(defpackage :schulte-documentation-template-asd
+(defpackage :simpler-documentation-template-asd
   (:use :cl :asdf))
 
-(in-package :schulte-documentation-template-asd)
+(in-package :simpler-documentation-template-asd)
 
 #+:sbcl
 (require :sb-introspect)
 
-(asdf:defsystem :schulte-documentation-template
+(asdf:defsystem :simpler-documentation-template
   :serial t
   :version "0.4.4"
   :components ((:file "packages")

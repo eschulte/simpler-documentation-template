@@ -26,7 +26,7 @@
 ;;; NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 ;;; SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-(in-package :schulte-documentation-template)
+(in-package :simpler-documentation-template)
 
 (defun expand-doc-string (doc-string)
   "Expand `foo' forms in the doc string to links."

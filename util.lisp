@@ -26,7 +26,7 @@
 ;;; NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 ;;; SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-(in-package :schulte-documentation-template)
+(in-package :simpler-documentation-template)
 
 ;;; For the purpose of this file, an "entry" is a list of four or five
 ;;; symbols - a name, a keyword for the kind of the entry, a lambda

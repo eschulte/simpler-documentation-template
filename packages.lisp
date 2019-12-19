@@ -28,7 +28,7 @@
 
 (in-package :cl-user)
 
-(defpackage :schulte-documentation-template
+(defpackage :simpler-documentation-template
   (:use :cl
         :cl-who
         :cl-ppcre
