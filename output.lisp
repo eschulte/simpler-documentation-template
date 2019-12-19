@@ -229,7 +229,7 @@ written.  OTHER-ENTRIES, probably updated, will be returned."
                                            :qualifiers qualifiers)))))
   other-entries)
 
-(defun write-page-header (package-name abstract subtitle source symbols)
+(defun write-page-header (package-name abstract symbols)
   "Writes the header of the HTML page.  Assumes that the library
 has the same name as the package.  Adds a list of all exported
 symbols with links."
@@ -238,7 +238,7 @@ symbols with links."
 
 <head>
   <meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\">
-  <title>~A - ~A</title>
+  <title>~A</title>
   <style type=\"text/css\">
   pre { padding:5px; background-color:#e0e0e0 }
   h3, h4 { text-decoration: underline; }
@@ -258,64 +258,24 @@ symbols with links."
   </style>
 </head>
 
-<body bgcolor=white>
+~A
 
-<h2> ~2:*~A - ~A</h2>
-
-<br>&nbsp;<br><h3><a name=abstract class=none>Abstract</a></h3>
-
-<p>~A</p>
-
-The code is available under the <a
-href=\"http://www.gnu.org/licenses/gpl-3.0.html\">GNU General Public License</a>.
-
-<p>
-<font color=red>Source:</font>
-<a href=\"~A\">~A</a>.
-
-<br>&nbsp;<br><h3><a class=none name=\"contents\">Contents</a></h3>
+<h2><a class=none name=\"dictionary\">The ~A dictionary</a></h2>
 <ol>
-  <li><a href=\"#source\">Source</a></li>
-  <li><a href=\"#introduction\">Introduction</a></li>
-  <li><a href=\"#dictionary\">The ~A dictionary</a></li>
-    <ol>
 ~{      <li><a href=\"#~A\"><code>~:*~A</code></a></li>
-~}    </ol>
-  <li><a href=\"#ack\">Acknowledgements</a></li>
-</ol>
-
-<br>&nbsp;<br><h3><a class=none name=\"source\">Source</a></h3>
-
-~A together with this documentation can be found at <a
-href=\"~A\">~A</a>.
-
-<br>&nbsp;<br><h3><a class=none name=\"introduction\">Introduction</a></h3>
-
-INTRODUCTION_PASTE
-
-<br>&nbsp;<br><h3><a class=none name=\"dictionary\">The ~A dictionary</a></h3>
-"
-          package-name subtitle
+~}
+</ol>"
+          package-name
           abstract
-          source source
-          package-name symbols
           package-name
-          source source
-          package-name
-          ))
+          symbols))
+
+(defvar *page-footer* "</body></html>"
+  "Default page footer.")
 
 (defun write-page-footer ()
   "Writes the footer of the HTML page."
-  (write-string "
-
-<br>&nbsp;<br><h3><a class=none name=\"ack\">Acknowledgements</a></h3>
-
-<p>
-This documentation was prepared with a hacked up version of <a href=\"http://weitz.de/documentation-template/\">DOCUMENTATION-TEMPLATE</a>.
-</p>
-
-</body>
-</html>"))
+  (write-string *page-footer*))
 
 (defun create-template (package &key (target (or *target*
                                                  #-:lispworks (error "*TARGET* not specified.")
@@ -325,11 +285,10 @@ This documentation was prepared with a hacked up version of <a href=\"http://wei
                                                                        :filters '("HTML Files" "*.HTML;*.HTM"
                                                                                   "All Files" "*.*")
                                                                        :filter "*.HTML;*.HTM")))
-                                     (subtitle *subtitle-txt*)
-                                     (abstract *abstract-html*)
-                                     (source *source*)
+                                     ((:abstract-html *abstract-html*) *abstract-html*)
                                      ((:maybe-skip-methods-p *maybe-skip-methods-p*)
                                       *maybe-skip-methods-p*)
+                                     ((:page-footer *page-footer*) *page-footer*)
                                      (if-exists :supersede)
                                      (if-does-not-exist :create))
   "Writes an HTML page with preliminary documentation entries and an
@@ -350,7 +309,7 @@ has a documentation string."
                  (loop
                   (let ((entry (or (pop entries) (return))))
                     (setq entries (write-entry entry entries))))))))
-        (write-page-header (package-name package) abstract subtitle source
+        (write-page-header (package-name package) *abstract-html*
                            (mapcar #'string-downcase (reverse *symbols*)))
         (write-string body)
         (write-page-footer))))

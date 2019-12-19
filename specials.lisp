@@ -41,12 +41,6 @@ used internally.")
 (defvar *abstract-html* nil
   "Text of the abstract.")
 
-(defvar *subtitle-txt* nil
-  "Text of the subtitle.")
-
-(defvar *source* nil
-  "Link to the source.")
-
 (defvar *symbols* nil
   "The list of symbols for which we will create an index with links.")
 
